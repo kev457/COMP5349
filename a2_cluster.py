@@ -92,7 +92,7 @@ extracted_df1.take(10)
 
 # step 2
 
-def step2(row):
+def categorize(row):
   is_impossible = row[0][-1]
 
   if is_impossible == True:
@@ -107,7 +107,7 @@ def step2(row):
     else:
       return(row[0][0],'possible negative'),(row[1][0],row[0][1],row[0][2],0,0)
 
-labelled_df = extracted_df1.map(step2)
+labelled_df = extracted_df1.map(categorize)
 
 labelled_df.take(5)
 
