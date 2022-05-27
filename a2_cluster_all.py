@@ -18,7 +18,7 @@ spark = SparkSession \
     .appName("COMP5349 A2") \
     .getOrCreate()
 
-test_data = "test.json"
+test_data = "CUADv1.json"
 test_init_df = spark.read.json(test_data)
 #train_data = "/Assignment_2_data/train_separate_questions.json"
 #train_init_df = spark.read.json(train_data)
