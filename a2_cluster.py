@@ -32,7 +32,7 @@ test_data_df= test_init_df.select((explode("data").alias('data')))
 test_paragraph_df = test_data_df.select(explode("data.paragraphs").alias("paragraph"))
 qas_context_df = test_paragraph_df.select(explode("paragraph.qas").alias("qas"),"paragraph.context")
 df1 = qas_context_df.withColumnRenamed("paragraph.context","context")
-df = qas_context_df.select('qas.id','context','qas.question',explode("qas.answers").alias("answers"),'qas.is_impossible')
+df = df1.select('qas.id','context','qas.question',explode("qas.answers").alias("answers"),'qas.is_impossible')
 
 df.show()
 df2 = df.withColumnRenamed("qas.id","id")
