@@ -63,7 +63,7 @@ def extraction(row):
   stride = 2048
   context_len = len(context)
   if context_len%stride==0:
-    seq_len = context_len/stride
+    seq_len = context_len//stride
   else:
     seq_len = context_len//stride + 1
   seq = []
